@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        * {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .painel {
+            margin: .5rem auto;
+            /*border: .1rem solid green;*/
+            width: 85rem;
+        }
+
+        .header,
+        .rodape {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            /*Espaçamento entre os elementos.*/
+            gap: .1rem;
+            justify-content: center;
+        }
+
+        .item {
+            height: 2rem;
+            border: .1rem solid rgb(0, 17, 255);
+            border-radius: 0.5rem;
+            padding: .5rem;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Alterar o valor da altura para observar o efeito do stretch. */
+            gap: 2rem;
+            /*Centraliza os itens horizontalmente dentro das células.*/
+            justify-items: stretch;
+            /*Faz os itens expandirem para preencher toda a célula.*/
+            align-items: stretch;
+
+        }
+
+        .item1 {
+            height: 15rem;
+            border: .1rem solid red;
+            border-radius: .5rem;
+            padding: .5rem;
+            margin: .5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="painel">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="item">Origem</div>
+            <div class="item">Destino</div>
+            <div class="item">Dias</div>
+            <div class="item">Preço</div>
+        </div>
+
+        <!-- Principal -->
+        <div class="container">
+            <div class="item1">Item 01</div>
+            <div class="item1">Item 02</div>
+            <div class="item1">Item 03</div>
+            <div class="item1">Item 04</div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="rodape">
+            <div class="item">Origem</div>
+            <div class="item">Destino</div>
+            <div class="item">Dias</div>
+            <div class="item">Preço</div>
+        </div>
+    </div>
+</body>
+
+</html>
